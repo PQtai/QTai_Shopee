@@ -850,6 +850,9 @@
     background-color: #f0f0f0;
 }
 /* footer */
+.footer {
+    padding: 0 20px;
+}
 .footer__policy {
     width: 100%;
     display: flex;
@@ -892,7 +895,6 @@
     margin-left: 20px;
     display: flex;
     flex-direction: column;
-    transform: translateY(10px);
 }
 .footer__policy-qr {
     display: block;

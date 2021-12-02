@@ -13,6 +13,9 @@
 * {
     box-sizing: inherit;
 }
+.map {
+    overflow: hidden;
+}
 html {
     height: 100vh;
     box-sizing: border-box;
@@ -145,7 +148,14 @@ html {
     margin-left: -4px;
     margin-right: -4px;
 }
-
+.wide .row.sm-gutter-min {
+    margin-left: -2px;
+    margin-right: -2px;
+}
+.wide .row.sm-gutter-min .col {
+    padding-left: 2px;
+    padding-right: 2px;
+}
 .row-slide {
     display: flex;
     flex-wrap: nowrap;
@@ -160,10 +170,6 @@ html {
     margin-left: 0;
     margin-right: 0;
 }
-.row.no-gutter-min {
-    margin-left: 0;
-    margin-right: 0;
-}
 .col {
     padding-left: 4px;
     padding-right: 4px;
@@ -174,10 +180,6 @@ html {
     padding-right: 0;
 }
 .row-slide.no-gutter .col {
-    padding-left: 0;
-    padding-right: 0;
-}
-.row.no-gutter-min .col {
     padding-left: 0;
     padding-right: 0;
 }
@@ -595,6 +597,14 @@ html {
 @media (min-width: 740px) and (max-width: 1023px) {
     .wide {
         width: 644px;
+    }
+    .wide .row.sm-gutter-min {
+        margin-left: -2px;
+        margin-right: -2px;
+    }
+    .wide .row.sm-gutter-min .col {
+        padding-left: 2px;
+        padding-right: 2px;
     }
 }
 
