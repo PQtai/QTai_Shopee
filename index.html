@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
@@ -16,7 +17,7 @@
     <div class="map">
         <div class="header">
             <div class="grid wide">
-                <nav class="header__nav">
+                <nav class="header__nav hide_mobile_tablet">
                     <ul class="header__nav-list">
                         <li class="header__nav-item header__nav-item--pesudo">
                             <a class="header__nav-item-link" href="">Kênh người bán</a>
@@ -81,10 +82,10 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="header__nav-item nav__item-right header__nav-item--pesudo">
+                        <li id="resgister" class="header__nav-item nav__item-right header__nav-item--pesudo">
                             <span>Đăng Kí</span>
                         </li>
-                        <li class="header__nav-item nav__item-right">
+                        <li id="login" class="header__nav-item nav__item-right">
                             <span>Đăng Nhập</span>
                         </li>
                     </ul>
@@ -93,6 +94,9 @@
                     <div class="header__logo">
                         <img src="assets/img/logo-full-white.png" alt="" class="header__logo-img">
                     </div>
+                    <a href="" class="header-info__user">
+                        <i class="far fa-user info__user-icon"></i>
+                    </a>
                     <div class="header__search-wrap">
                         <div class="header__search">
                             <input type="text" class="header__search-input" placeholder="NHẬP MÃ CBNOV2111B GIẢM NGAY 10K">
@@ -134,7 +138,7 @@
         <div class="container">
             <div class="grid wide">
                 <div class="row sm-gutter-min">
-                    <div class="col p-8 t-8 m-8 container__glide">
+                    <div class="col p-8 t-12 m-12 container__glide">
                         <div class="col p-12 t-12 m-12">
                             <a href="" class="container__glide-img-link">
                                 <img src="https://media.foody.vn/blogscontents/foody-upload-api-foody-admin-2-637112383790142132-191206141258.jpg" alt="" class="container__glide-img">
@@ -249,7 +253,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row hide_mobile_tablet">
                     <div class="col p-12 m-12 container__customer">
                         <a href="" class="container__customer-link">
                             <img src="https://cf.shopee.sg/file/bff4b9ff99dcd7d75723fe713a894e61" alt="" class="container__customer-img">
@@ -258,7 +262,7 @@
                 </div>
                 <div class="container__category">
                     <div class="row">
-                        <div class="col p-12 t-12 m-12 container__category">
+                        <div class="col p-12 t-12 m-12">
                             <h1 class="container__category-title">DANH MỤC</h1>
                         </div>
                     </div>
@@ -599,10 +603,10 @@
                 </div>
                 <div class="container__suggest">
                     <div class="row sm-gutter">
-                        <div class="col p-12">
+                        <div class="col p-12 t-12 m-12">
                             <div class="container__suggest-wrap">
                                 <div class="container__suggest-title">GỢI Ý HÔM NAY</div>
-                                <div class="container__suggest-img-wrap">
+                                <div class="container__suggest-img-wrap hide_mobile">
                                     <img src="https://cf.shopee.vn/file/2163de8eb4ee4c25db0c9ba6f5d47cba" alt="" class="container__suggest-img">
                                 </div>
                             </div>
@@ -1011,7 +1015,7 @@
                     </div>
                     <div class="row no-gutter">
                         <div class="container__suggest-continue">
-                            <a href="" class="col p-4 t-6 m-4 container__suggest-continue-title">Xem Thêm</a>
+                            <a href="" class="col p-4 t-6 m-12 container__suggest-continue-title">Xem Thêm</a>
                         </div>
                     </div>
                 </div>
@@ -1095,7 +1099,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col p-3 t-6 m-6">
+                    <div class="col p-3 t-6 m-6 m-o-3">
                         <div class="footer__policy">
                             <p class="footer__policy-title">THEO DÕI CHÚNG TÔI TRÊN</p>
                             <ul class="footer__policy-list">
@@ -1114,7 +1118,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col p-3 t-6 m-6">
+                    <div class="col p-3 t-6 m-0">
                         <div class="footer__policy">
                             <p class="footer__policy-title">TẢI ỨNG DỤNG SHOPEE NGAY THÔI</p>
                             <div class="footer__policy-app">
@@ -1146,8 +1150,8 @@
             <div class="auth-form">
                 <div class="auth-form__container">
                     <div class="auth-form__header">
-                        <h3 class="auth-form__heading">Đăng Ký</h3>
-                        <span class="auth-form__switch-btn">Đăng Nhập</span>
+                        <h3 class="auth-form__heading">Đăng Nhập</h3>
+                        <span class="auth-form__switch-btn">Đăng Ký</span>
                     </div>
                     <div class="auth-form__info">
                         <div class="auth-form__groub">
@@ -1190,7 +1194,7 @@
                 </div>
             </div>
             <!-- resgister -->
-            <div class="auth-form form--display">
+            <div class="auth-form">
                 <div class="auth-form__container">
                     <div class="auth-form__header">
                         <h3 class="auth-form__heading">Đăng Ký</h3>

@@ -56,12 +56,12 @@ html {
 
 /* modal */
 .modal {
+    z-index: 99;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    display: flex;
     display: none;
 }
 .modal__overlay {
@@ -69,6 +69,7 @@ html {
     width: 100%;
     height: 100%;
     background-color: rgba(0 , 0, 0, 0.4);
+    animation: fadeIn ease .3s;
 }
 .modal__body {
     background-color: #fff;
@@ -76,6 +77,8 @@ html {
     z-index: 1;
     border-radius: 5px;
     margin: auto;
+    transform-origin: center;
+    animation: fade-pour-down ease .3s;
 }
 /* btn */
 .btn{
@@ -290,7 +293,6 @@ html {
 .m-o-11 {
     margin-left: 91.66667%;
 }
-
 /* >= Tablet */
 @media (min-width: 740px) {
     .row {

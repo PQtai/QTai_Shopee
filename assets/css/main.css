@@ -222,6 +222,7 @@
     color: var(--primary-color);
     font-weight: 400;
     cursor: pointer;
+    padding: 6px 0;
 }
 .auth-form__input {
     height: 40px;
@@ -313,6 +314,12 @@
     display: flex;
     height: var(--header-width-search-height)
 }
+.header-info__user {
+    font-size: 2rem;
+    color: #fff;
+    padding: 10px 20px 10px 10px;
+    display: none;
+}
 .header__logo {
     width: 200px;
 }
@@ -326,7 +333,7 @@
     position: relative;
     height: 40px;
     display: flex;
-    border-radius: 2px;
+    border-radius: 3px;
     background-color: #fff;
 }
 .header__search-title {
@@ -850,9 +857,6 @@
     background-color: #f0f0f0;
 }
 /* footer */
-.footer {
-    padding: 0 20px;
-}
 .footer__policy {
     width: 100%;
     display: flex;
