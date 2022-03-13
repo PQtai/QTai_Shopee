@@ -237,6 +237,18 @@
 .auth-form__input:focus {
     border-color: #888;
 }
+.invalid .form-message{
+    color: red;
+    display: block;
+}
+.invalid .auth-form__input{
+    border: 1px solid red;
+}
+.form-message {
+    font-size: 1.2rem;
+    margin-left: 6px;
+    display: none;
+}
 .auth-form__aside {
     margin-top: 18px;
 }
@@ -255,6 +267,13 @@
     margin-top: 60px;
     display: flex;
     justify-content: flex-end;
+}
+.form-label {
+    font-size: 1.4rem;
+}
+.form-control__gender{
+    display: flex;
+    justify-content: space-between;
 }
 .form__controls-btn-back:hover {
     background-color: rgba(235, 224, 224,0.5);

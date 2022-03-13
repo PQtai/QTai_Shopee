@@ -1099,7 +1099,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col p-3 t-6 m-6 m-o-3">
+                    <div class="col p-3 t-6 m-6">
                         <div class="footer__policy">
                             <p class="footer__policy-title">THEO DÕI CHÚNG TÔI TRÊN</p>
                             <ul class="footer__policy-list">
@@ -1147,18 +1147,21 @@
         <div class="modal__overlay"></div>
         <div class="modal__body">
             <!-- xuat hien form:  form--display-->
-            <div class="auth-form">
+            <form method="post" action="" id="form-1" class="auth-form">
                 <div class="auth-form__container">
                     <div class="auth-form__header">
                         <h3 class="auth-form__heading">Đăng Nhập</h3>
                         <span class="auth-form__switch-btn">Đăng Ký</span>
                     </div>
                     <div class="auth-form__info">
+                        <!-- add class: invalid -->
                         <div class="auth-form__groub">
-                            <input type="text" class="auth-form__input" placeholder="Email hoặc số điện thoại của bạn"></input>
+                            <input name="email" id="email" type="text" class="auth-form__input" placeholder="Nhập email của bạn"></input>
+                            <span class="form-message"></span>
                         </div>
                         <div class="auth-form__groub">
-                            <input type="password" class="auth-form__input" placeholder="Mật khẩu của bạn"></input>
+                            <input name="password" id="password" type="password" class="auth-form__input" placeholder="Mật khẩu của bạn"></input>
+                            <span class="form-message"></span>
                         </div>
                     </div>
                     <div class="auth-form__aside">
@@ -1192,9 +1195,9 @@
                         Apple
                     </a>
                 </div>
-            </div>
+            </form>
             <!-- resgister -->
-            <div class="auth-form">
+            <form method="post" action="" id="form-2" class="auth-form">
                 <div class="auth-form__container">
                     <div class="auth-form__header">
                         <h3 class="auth-form__heading">Đăng Ký</h3>
@@ -1202,13 +1205,16 @@
                     </div>
                     <div class="auth-form__info">
                         <div class="auth-form__groub">
-                            <input type="text" class="auth-form__input" placeholder="Email hoặc số điện thoại của bạn"></input>
+                            <input name="email" id="email" type="text" class="auth-form__input" placeholder="Nhập email của bạn"></input>
+                            <span class="form-message"></span>
                         </div>
                         <div class="auth-form__groub">
-                            <input type="password" class="auth-form__input" placeholder="Mật khẩu của bạn"></input>
+                            <input name="password" id="password" type="password" class="auth-form__input" placeholder="Mật khẩu của bạn"></input>
+                            <span class="form-message"></span>
                         </div>
                         <div class="auth-form__groub">
-                            <input type="password" class="auth-form__input" placeholder="Xác nhận mật khẩu"></input>
+                            <input name="passwordConfirmation" id="password_confirmation" type="password" class="auth-form__input" placeholder="Xác nhận mật khẩu"></input>
+                            <span class="form-message"></span>
                         </div>
                     </div>
                     <div class="auth-form__aside">
@@ -1242,9 +1248,49 @@
                         Apple
                     </a>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
     <script src="assets/js/main.js"></script>
+    <script src="./validator.js"></script>
+    <script>
+        // Nơi truyền đối số
+        Validator({
+            form: '#form-2',
+            formGroubSelector: '.auth-form__groub',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#email'),
+                Validator.isEmail('#email'),
+                Validator.isRequired('#password'),
+                Validator.isMinlength('#password' , 6),
+                Validator.isRequired('#password_confirmation'), 
+                Validator.isConfirmed('#password_confirmation', function(){
+                    return document.querySelector('#form-2 #password').value;
+                }, 'Mật khẩu không trùng khớp'),
+            ],
+            onSubmit: function(data){
+                // call API
+                console.log(data);
+            } 
+        });
+        Validator({
+            form: '#form-1',
+            formGroubSelector: '.auth-form__groub',
+            errorSelector: '.form-message',
+            rules: [
+                // Validator.isRequired('#email'),
+                Validator.isRequired('#email'),
+                Validator.isEmail('#email'),
+                Validator.isRequired('#password'),
+                Validator.isMinlength('#password' , 6),
+                // Validator.isRequired('input[name="gender"]'), 
+            ],
+            onSubmit: function(data){
+                // call API
+                console.log(data);
+            } 
+        });
+    </script>
 </body>
 </html>

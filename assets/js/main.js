@@ -85,6 +85,7 @@ function eventhandling(){
             }
         };
     });
+    // handle event click btn back
     btnbackAuths.forEach((btnbackAuth) => {
         btnbackAuth.onclick = function(){
             handleLogicModal();
